@@ -69,12 +69,6 @@ The system consists of three main layers:
 ## 🧪 Prototype Demonstration
 The working prototype includes a wearable smart collar connected to an ESP32 microcontroller.  
 Sensor data is transmitted to a web dashboard where wildlife monitoring data can be visualized in real time.
-
----
-
-## 📊 Project Cost
-Approximate prototype cost: **₹3,000 – ₹4,000**
-
 ---
 
 ## 👨‍💻 Author
@@ -82,8 +76,3 @@ Approximate prototype cost: **₹3,000 – ₹4,000**
 
 GitHub:  
 https://github.com/kartik3174
-
----
-
-## 📜 License
-This project is developed for academic and innovation competition purposes.
