@@ -1,0 +1,16 @@
+{
+  "name": "W.A.T.C.H - Wildlife AI Tracking and Conservation Hub",
+  "short_name": "W.A.T.C.H",
+  "description": "Track and monitor wildlife with AI-powered insights",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
