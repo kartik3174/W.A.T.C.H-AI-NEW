@@ -1,24 +1,29 @@
-import { consumeStream, convertToModelMessages, streamText, type UIMessage } from "ai"
+import { streamText, type UIMessage } from "ai"
+import { openai } from "@ai-sdk/openai"
 
 export const maxDuration = 30
 
 export async function POST(req: Request) {
-  const { messages }: { messages: UIMessage[] } = await req.json()
+  try {
+    const { messages } = await req.json()
 
-  const prompt = convertToModelMessages(messages)
+    // Check if OPENAI_API_KEY is configured or let it fail naturally
+    if (!process.env.OPENAI_API_KEY) {
+      return new Response(
+        "OpenAI API key is missing. Add OPENAI_API_KEY to your .env file to enable the W.A.T.C.H AI Assistant.", 
+        { status: 500 }
+      );
+    }
 
-  const result = streamText({
-    model: "openai/gpt-5-mini", // Vercel AI Gateway handles routing
-    prompt,
-    abortSignal: req.signal,
-  })
+    const result = await streamText({
+      model: openai("gpt-4o-mini"), 
+      messages: messages.map((m: any) => ({ role: m.role, content: m.content })),
+      abortSignal: req.signal,
+    })
 
-  return result.toUIMessageStreamResponse({
-    onFinish: async ({ isAborted }) => {
-      if (isAborted) {
-        console.log("[v0] Chat stream aborted")
-      }
-    },
-    consumeSseStream: consumeStream,
-  })
+    return result.toTextStreamResponse()
+  } catch (error: any) {
+    console.error("[v0] AI Chat Error:", error)
+    return new Response(error.message || "An error occurred", { status: 500 })
+  }
 }
