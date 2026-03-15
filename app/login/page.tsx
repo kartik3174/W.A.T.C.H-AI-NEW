@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0B132B] to-[#1C3A52] relative overflow-hidden p-4">
+    <div className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden p-4">
 
       {/* Decorative Leaves */}
       <LeafDecoration position="top-left" size="lg" rotation={45} opacity={0.2} />
@@ -19,17 +19,17 @@ export default function LoginPage() {
       <LeafDecoration position="bottom-left" size="sm" rotation={-45} opacity={0.1} />
 
       {/* Login Card */}
-      <div className="relative z-10 w-full max-w-md rounded-xl border-2 border-[#FF7A00] bg-[#1C7ED6] p-6 sm:p-8 shadow-2xl">
+      <div className="card relative z-10 w-full max-w-md p-6 sm:p-8">
 
         {/* Logo + Title */}
         <div className="flex flex-col items-center space-y-2 mb-6">
           <WatchLogo showText size={48} />
 
-          <h1 className="text-3xl font-bold text-[#FF7A00] text-center">
+          <h1 className="text-3xl font-bold text-primary text-center drop-shadow-md">
             Login to W.A.T.C.H
           </h1>
 
-          <p className="text-sm text-[#EAEAEA] text-center font-semibold">
+          <p className="text-sm text-muted-foreground text-center font-semibold">
             Wildlife AI Tracking and Conservation Hub
           </p>
         </div>

@@ -14,9 +14,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "W.A.T.C.H | Wildlife AI Tracking and Conservation Hub",
   description: "Track and monitor wildlife with AI-powered insights",
-  icons: {
-    icon: "/favicon.ico",
-  },
   manifest: "/manifest.json",
   generator: "v0.app",
 }
