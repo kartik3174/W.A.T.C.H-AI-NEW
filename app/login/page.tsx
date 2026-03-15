@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { LoginForm } from "@/components/auth/login-form";
-import { WatchLogo } from "@/components/watch-logo";
-import { LeafDecoration } from "@/components/leaf-decoration";
+import type { Metadata } from "next"
+import { LoginForm } from "@/components/auth/login-form"
+import { WatchLogo } from "@/components/watch-logo"
+import { LeafDecoration } from "@/components/leaf-decoration"
 
 export const metadata: Metadata = {
-  title: "Login | Wildlife Watch",
+  title: "Login | W.A.T.C.H",
   description: "Login to access the Wildlife AI Tracking and Conservation Hub",
-};
+}
 
 export default function LoginPage() {
   return (
@@ -19,10 +19,10 @@ export default function LoginPage() {
       <LeafDecoration position="bottom-left" size="sm" rotation={-45} opacity={0.1} />
 
       {/* Login Card */}
-      <div className="w-full max-w-md bg-[#1C7ED6] p-6 sm:p-8 rounded-xl shadow-2xl border-2 border-[#FF7A00] relative z-10">
+      <div className="relative z-10 w-full max-w-md rounded-xl border-2 border-[#FF7A00] bg-[#1C7ED6] p-6 sm:p-8 shadow-2xl">
 
         {/* Logo + Title */}
-        <div className="flex flex-col items-center mb-6 space-y-2">
+        <div className="flex flex-col items-center space-y-2 mb-6">
           <WatchLogo showText size={48} />
 
           <h1 className="text-3xl font-bold text-[#FF7A00] text-center">
@@ -39,5 +39,5 @@ export default function LoginPage() {
 
       </div>
     </div>
-  );
+  )
 }
