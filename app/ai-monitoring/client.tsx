@@ -1,7 +1,8 @@
 "use client"
 
+import { useEffect, useState } from "react"
+import * as tmImage from "@teachablemachine/image"
 import type React from "react"
-import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 
 export function AIMonitoringClient() {
@@ -14,39 +15,91 @@ export function AIMonitoringClient() {
   const [detections, setDetections] = useState<any[]>([])
   const [imagePreview, setImagePreview] = useState<string | null>(null)
 
+  const [model, setModel] = useState<any>(null)
+
+  /* -------------------------
+     Load AI model
+  --------------------------*/
+
   useEffect(() => {
-    const loadComponent = async () => {
+
+    const loadModel = async () => {
       try {
-        const module = await import(
-          "@/components/ai-monitoring/ai-monitoring-dashboard"
-        )
-        setAIMonitoringDashboard(() => module.default)
+
+        const modelURL = "/model/model.json"
+        const metadataURL = "/model/metadata.json"
+
+        const loadedModel = await tmImage.load(modelURL, metadataURL)
+
+        setModel(loadedModel)
+
+        console.log("AI model loaded successfully")
+
       } catch (error) {
-        console.error("Failed to load AI monitoring dashboard:", error)
-      } finally {
-        setLoading(false)
+        console.error("Failed to load AI model:", error)
       }
     }
 
-    loadComponent()
+    loadModel()
+
   }, [])
 
-  async function detectAnimal(file: File) {
+  /* -------------------------
+     Load dashboard component
+  --------------------------*/
 
-    const formData = new FormData()
-    formData.append("file", file)
+  useEffect(() => {
 
-    const res = await fetch("/api/detect", {
-      method: "POST",
-      body: formData
-    })
+    const loadComponent = async () => {
 
-    const data = await res.json()
+      try {
 
-    console.log("AI Result:", data)
+        const module = await import(
+          "@/components/ai-monitoring/ai-monitoring-dashboard"
+        )
 
-    setDetections(data.detections || [])
+        setAIMonitoringDashboard(() => module.default)
+
+      } catch (error) {
+
+        console.error("Failed to load AI monitoring dashboard:", error)
+
+      } finally {
+
+        setLoading(false)
+
+      }
+
+    }
+
+    loadComponent()
+
+  }, [])
+
+  /* -------------------------
+     Run AI prediction
+  --------------------------*/
+
+  async function detectAnimal(imageElement: HTMLImageElement) {
+
+    if (!model) return
+
+    const prediction = await model.predict(imageElement)
+
+    const results = prediction.map((p: any) => ({
+      label: p.className,
+      confidence: p.probability
+    }))
+
+    results.sort((a: any, b: any) => b.confidence - a.confidence)
+
+    setDetections(results.slice(0, 3))
+
   }
+
+  /* -------------------------
+     Handle image upload
+  --------------------------*/
 
   async function handleUpload(e: React.ChangeEvent<HTMLInputElement>) {
 
@@ -55,10 +108,24 @@ export function AIMonitoringClient() {
     if (!file) return
 
     const preview = URL.createObjectURL(file)
+
     setImagePreview(preview)
 
-    await detectAnimal(file)
+    const img = new Image()
+
+    img.src = preview
+
+    img.onload = async () => {
+
+      await detectAnimal(img)
+
+    }
+
   }
+
+  /* -------------------------
+     Loading state
+  --------------------------*/
 
   if (loading) {
     return (
@@ -89,10 +156,13 @@ export function AIMonitoringClient() {
     )
   }
 
+  /* -------------------------
+     UI
+  --------------------------*/
+
   return (
     <div className="space-y-6">
 
-      {/* Upload Section */}
       <Card className="p-6">
         <CardContent className="space-y-4">
 
@@ -117,20 +187,29 @@ export function AIMonitoringClient() {
 
           {detections.length > 0 && (
             <div className="mt-4 space-y-2">
+
               {detections.map((d, i) => (
-                <div key={i} className="p-2 border rounded bg-muted">
+
+                <div
+                  key={i}
+                  className="p-3 border rounded bg-muted"
+                >
+
                   <b>Animal:</b> {d.label} <br />
+
                   <b>Confidence:</b>{" "}
                   {(d.confidence * 100).toFixed(2)}%
+
                 </div>
+
               ))}
+
             </div>
           )}
 
         </CardContent>
       </Card>
 
-      {/* Existing Dashboard */}
       <AIMonitoringDashboard />
 
     </div>
