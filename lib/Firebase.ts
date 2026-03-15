@@ -2,13 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB2NqvJMUCK5C3QfVW31ILwsW7oPV52O5c",
-  authDomain: "watch-ai-new.firebaseapp.com",
-  projectId: "watch-ai-new",
-  storageBucket: "watch-ai-new.firebasestorage.app",
-  messagingSenderId: "510683991264",
-  appId: "1:510683991264:web:7b5b955f50d0c4de029485",
-  measurementId: "G-QK3KV6LVMN"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
