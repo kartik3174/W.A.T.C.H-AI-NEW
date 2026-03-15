@@ -219,7 +219,7 @@ export function HealthDashboard() {
                     <Cell key={`cell-${index}`} fill={entry.color} />
                   ))}
                 </Pie>
-                <Tooltip contentStyle={{ backgroundColor: "#111827", border: "1px solid #14532D", color: "#E5E7EB" }} />
+                <Tooltip contentStyle={{ backgroundColor: "#111827", border: "1px solid #14532D", color: "#E5E7EB" }} itemStyle={{ color: "#E5E7EB" }} />
                 <Legend
                   wrapperStyle={{ color: "#E5E7EB" }}
                   onClick={(e) => {
@@ -247,7 +247,7 @@ export function HealthDashboard() {
                 <CartesianGrid strokeDasharray="3 3" stroke="#14532D" />
                 <XAxis dataKey="day" stroke="#9CA3AF" />
                 <YAxis stroke="#9CA3AF" />
-                <Tooltip contentStyle={{ backgroundColor: "#111827", border: "1px solid #14532D", color: "#E5E7EB" }} />
+                <Tooltip contentStyle={{ backgroundColor: "#111827", border: "1px solid #14532D", color: "#E5E7EB" }} itemStyle={{ color: "#E5E7EB" }} />
                 <Legend wrapperStyle={{ color: "#E5E7EB" }} />
                 <Line
                   type="monotone"
@@ -445,7 +445,7 @@ export function HealthDashboard() {
                     <CartesianGrid strokeDasharray="3 3" stroke="#14532D" />
                     <XAxis dataKey="month" stroke="#9CA3AF" />
                     <YAxis stroke="#9CA3AF" />
-                    <Tooltip contentStyle={{ backgroundColor: "#111827", border: "1px solid #14532D", color: "#E5E7EB" }} />
+                    <Tooltip contentStyle={{ backgroundColor: "#111827", border: "1px solid #14532D", color: "#E5E7EB" }} itemStyle={{ color: "#E5E7EB" }} />
                     <Legend wrapperStyle={{ color: "#E5E7EB" }} />
                     <Bar dataKey="Preventative" fill="#10b981" />
                     <Bar dataKey="Emergency" fill="#ef4444" />
@@ -470,7 +470,7 @@ export function HealthDashboard() {
                     <CartesianGrid strokeDasharray="3 3" stroke="#14532D" />
                     <XAxis dataKey="week" stroke="#9CA3AF" />
                     <YAxis domain={[0, 100]} stroke="#9CA3AF" />
-                    <Tooltip contentStyle={{ backgroundColor: "#111827", border: "1px solid #14532D", color: "#E5E7EB" }} />
+                    <Tooltip contentStyle={{ backgroundColor: "#111827", border: "1px solid #14532D", color: "#E5E7EB" }} itemStyle={{ color: "#E5E7EB" }} />
                     <Legend wrapperStyle={{ color: "#E5E7EB" }} />
                     <Line
                       type="monotone"
