@@ -21,7 +21,6 @@ export default function DatabasePage() {
       <PageHeader
         title="Wildlife Database"
         description="Manage wildlife data, cameras, and alerts"
-        icon={<Database className="h-6 w-6" />}
       />
 
       <Tabs defaultValue="animals" className="space-y-6">
