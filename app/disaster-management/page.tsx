@@ -16,7 +16,7 @@ export default function DisasterManagementPage() {
       <div className="container mx-auto py-6">
         <PageHeader title="Wildlife Disaster Management" description="Monitor disaster events and coordinate wildlife evacuation plans" />
         <Tabs defaultValue="events" className="w-full mt-6">
-          <TabsList className="bg-[#111827] border border-[#14532D]">
+          <TabsList className="bg-card border border-border">
             <TabsTrigger value="events">Disaster Events</TabsTrigger>
             <TabsTrigger value="evacuation">Evacuation Plans</TabsTrigger>
           </TabsList>

@@ -12,10 +12,10 @@ export function AnimalCareHub() {
   return (
     <div className="space-y-6">
       <Tabs defaultValue="health" className="space-y-6">
-        <TabsList className="grid w-full grid-cols-3 bg-[#111827] border-[#14532D]">
-          <TabsTrigger value="health" className="text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">Health Updates</TabsTrigger>
-          <TabsTrigger value="recommendations" className="text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">Care Recommendations</TabsTrigger>
-          <TabsTrigger value="history" className="text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">Veterinary History</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-3 bg-card border-border">
+          <TabsTrigger value="health" className="text-foreground data-[state=active]:bg-secondary">Health Updates</TabsTrigger>
+          <TabsTrigger value="recommendations" className="text-foreground data-[state=active]:bg-secondary">Care Recommendations</TabsTrigger>
+          <TabsTrigger value="history" className="text-foreground data-[state=active]:bg-secondary">Veterinary History</TabsTrigger>
         </TabsList>
 
         <TabsContent value="health" className="space-y-6">
@@ -32,21 +32,21 @@ export function AnimalCareHub() {
       </Tabs>
 
       {/* Analytics Link Card */}
-      <Card className="border-[#14532D] bg-[#0F172A]">
+      <Card className="border-border bg-background">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
-            <BarChart3 className="h-5 w-5 text-[#16A34A]" />
+          <CardTitle className="flex items-center gap-2 text-foreground">
+            <BarChart3 className="h-5 w-5 text-accent" />
             Health Analytics & Trends
           </CardTitle>
-          <CardDescription className="text-[#9CA3AF]">View detailed health statistics and insights</CardDescription>
+          <CardDescription className="text-muted-foreground">View detailed health statistics and insights</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-[#9CA3AF] mb-4">
+          <p className="text-sm text-muted-foreground mb-4">
             Access comprehensive health status distribution, behavioral trends, and detailed animal health profiles in the Analytics module.
           </p>
           <Button
             asChild
-            className="w-full bg-[#16A34A] hover:bg-[#15803d] text-white"
+            className="w-full bg-primary hover:bg-primary/90 text-white"
           >
             <Link href="/analytics" className="flex items-center justify-center gap-2">
               View Analytics

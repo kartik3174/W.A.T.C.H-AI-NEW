@@ -150,9 +150,9 @@ export function ConservationSidebar() {
   }
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-64 border-r border-[#14532D] bg-[#0F172A]/95 backdrop-blur-sm shadow-lg z-30">
+    <div className="fixed left-0 top-0 h-screen w-64 border-r border-border bg-background/95 backdrop-blur-sm shadow-lg z-30">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-[#14532D] h-16 bg-gradient-to-r from-[#0B3D2E] to-[#14532D]">
+      <div className="flex items-center justify-between p-4 border-b border-border h-16 bg-gradient-to-r from-[#0B3D2E] to-[#14532D]">
         <div className="flex items-center gap-3">
           <WatchLogo size={32} showText={true} />
         </div>
@@ -160,7 +160,7 @@ export function ConservationSidebar() {
           variant="ghost"
           size="icon"
           onClick={toggleFullScreen}
-          className="ml-auto text-[#E5E7EB] hover:bg-[#14532D]"
+          className="ml-auto text-foreground hover:bg-[#14532D]"
           aria-label={isFullScreen ? "Exit full screen" : "Enter full screen"}
         >
           {isFullScreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
@@ -283,11 +283,11 @@ export function ConservationSidebar() {
       )}
 
       {/* Footer */}
-      <div className="absolute bottom-0 left-0 right-0 border-t border-[#14532D] bg-[#0F172A]/95 flex flex-col">
+      <div className="absolute bottom-0 left-0 right-0 border-t border-border bg-background/95 flex flex-col">
         {userEmail && (
-          <div className="px-4 py-2 border-b border-[#14532D] bg-[#14532D]/30">
-            <p className="text-[10px] text-[#9CA3AF] uppercase font-bold truncate">Logged in as</p>
-            <p className="text-xs font-medium truncate text-[#E5E7EB]">{userEmail}</p>
+          <div className="px-4 py-2 border-b border-border bg-[#14532D]/30">
+            <p className="text-[10px] text-muted-foreground uppercase font-bold truncate">Logged in as</p>
+            <p className="text-xs font-medium truncate text-foreground">{userEmail}</p>
           </div>
         )}
         <div className="p-4 flex flex-col gap-3">

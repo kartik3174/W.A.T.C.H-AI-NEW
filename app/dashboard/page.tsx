@@ -17,7 +17,7 @@ export default function DashboardPage() {
       <Button
         variant="ghost"
         size="sm"
-        className="text-[#E5E7EB] hover:bg-[#14532D]"
+        className="text-foreground hover:bg-[#14532D]"
       >
         <Settings className="w-4 h-4" />
       </Button>
@@ -25,7 +25,7 @@ export default function DashboardPage() {
         variant="outline"
         asChild
         size="sm"
-        className="text-[#E5E7EB] border-[#14532D] hover:bg-[#14532D]"
+        className="text-foreground border-border hover:bg-[#14532D]"
       >
         <Link href="/action-view">
           <ExternalLink className="mr-2 h-3 w-3" />

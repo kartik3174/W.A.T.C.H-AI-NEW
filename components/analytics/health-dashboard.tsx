@@ -153,13 +153,13 @@ export function HealthDashboard() {
       {/* Filters Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Select value={selectedSpecies} onValueChange={setSelectedSpecies}>
-          <SelectTrigger className="bg-[#111827] border-[#14532D] text-[#E5E7EB]">
+          <SelectTrigger className="bg-card border-border text-foreground">
             <SelectValue placeholder="All Species" />
           </SelectTrigger>
-          <SelectContent className="bg-[#111827] border-[#14532D]">
-            <SelectItem value="all" className="text-[#E5E7EB]">All Species</SelectItem>
+          <SelectContent className="bg-card border-border">
+            <SelectItem value="all" className="text-foreground">All Species</SelectItem>
             {species.map((sp) => (
-              <SelectItem key={sp} value={sp} className="text-[#E5E7EB]">
+              <SelectItem key={sp} value={sp} className="text-foreground">
                 {sp}
               </SelectItem>
             ))}
@@ -167,13 +167,13 @@ export function HealthDashboard() {
         </Select>
 
         <Select value={selectedStatus} onValueChange={setSelectedStatus}>
-          <SelectTrigger className="bg-[#111827] border-[#14532D] text-[#E5E7EB]">
+          <SelectTrigger className="bg-card border-border text-foreground">
             <SelectValue placeholder="All Statuses" />
           </SelectTrigger>
-          <SelectContent className="bg-[#111827] border-[#14532D]">
-            <SelectItem value="all" className="text-[#E5E7EB]">All Statuses</SelectItem>
+          <SelectContent className="bg-card border-border">
+            <SelectItem value="all" className="text-foreground">All Statuses</SelectItem>
             {statuses.map((status) => (
-              <SelectItem key={status} value={status} className="text-[#E5E7EB]">
+              <SelectItem key={status} value={status} className="text-foreground">
                 {status}
               </SelectItem>
             ))}
@@ -181,13 +181,13 @@ export function HealthDashboard() {
         </Select>
 
         <Select value={selectedLocation} onValueChange={setSelectedLocation}>
-          <SelectTrigger className="bg-[#111827] border-[#14532D] text-[#E5E7EB]">
+          <SelectTrigger className="bg-card border-border text-foreground">
             <SelectValue placeholder="All Locations" />
           </SelectTrigger>
-          <SelectContent className="bg-[#111827] border-[#14532D]">
-            <SelectItem value="all" className="text-[#E5E7EB]">All Locations</SelectItem>
+          <SelectContent className="bg-card border-border">
+            <SelectItem value="all" className="text-foreground">All Locations</SelectItem>
             {locations.map((loc) => (
-              <SelectItem key={loc} value={loc} className="text-[#E5E7EB]">
+              <SelectItem key={loc} value={loc} className="text-foreground">
                 {loc}
               </SelectItem>
             ))}
@@ -196,10 +196,10 @@ export function HealthDashboard() {
       </div>
 
       {/* Health Status Chart */}
-      <Card className="border-[#14532D] bg-[#0F172A]">
+      <Card className="border-border bg-background">
         <CardHeader>
-          <CardTitle className="text-[#E5E7EB]">Health Status</CardTitle>
-          <CardDescription className="text-[#9CA3AF]">Overall health distribution of tracked animals</CardDescription>
+          <CardTitle className="text-foreground">Health Status</CardTitle>
+          <CardDescription className="text-muted-foreground">Overall health distribution of tracked animals</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="h-[300px]">
@@ -235,10 +235,10 @@ export function HealthDashboard() {
       </Card>
 
       {/* Behavioral Trends Analysis */}
-      <Card className="border-[#14532D] bg-[#0F172A]">
+      <Card className="border-border bg-background">
         <CardHeader>
-          <CardTitle className="text-[#E5E7EB]">Behavioral Trends Analysis</CardTitle>
-          <CardDescription className="text-[#9CA3AF]">Activity patterns by health status across the week</CardDescription>
+          <CardTitle className="text-foreground">Behavioral Trends Analysis</CardTitle>
+          <CardDescription className="text-muted-foreground">Activity patterns by health status across the week</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="h-[300px]">
@@ -291,33 +291,33 @@ export function HealthDashboard() {
       </Card>
 
       {/* Animals Table */}
-      <Card className="border-[#14532D] bg-[#0F172A]">
+      <Card className="border-border bg-background">
         <CardHeader>
-          <CardTitle className="text-[#E5E7EB]">Animals Overview</CardTitle>
-          <CardDescription className="text-[#9CA3AF]">Click on an animal to view detailed health information</CardDescription>
+          <CardTitle className="text-foreground">Animals Overview</CardTitle>
+          <CardDescription className="text-muted-foreground">Click on an animal to view detailed health information</CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="bg-[#111827] border-[#14532D]">
-              <TabsTrigger value="all" className="text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">All Animals</TabsTrigger>
-              <TabsTrigger value="tracked" className="text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">Currently Tracked</TabsTrigger>
-              <TabsTrigger value="alerts" className="text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">Health Alerts</TabsTrigger>
+            <TabsList className="bg-card border-border">
+              <TabsTrigger value="all" className="text-foreground data-[state=active]:bg-secondary">All Animals</TabsTrigger>
+              <TabsTrigger value="tracked" className="text-foreground data-[state=active]:bg-secondary">Currently Tracked</TabsTrigger>
+              <TabsTrigger value="alerts" className="text-foreground data-[state=active]:bg-secondary">Health Alerts</TabsTrigger>
             </TabsList>
 
             <TabsContent value="all" className="mt-4">
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="border-[#14532D] hover:bg-[#0B3D2E]">
-                      <TableHead className="text-[#E5E7EB]">ID</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Name</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Species</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Age</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Gender</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Location</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Status</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Last Seen</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Actions</TableHead>
+                    <TableRow className="border-border hover:bg-secondary">
+                      <TableHead className="text-foreground">ID</TableHead>
+                      <TableHead className="text-foreground">Name</TableHead>
+                      <TableHead className="text-foreground">Species</TableHead>
+                      <TableHead className="text-foreground">Age</TableHead>
+                      <TableHead className="text-foreground">Gender</TableHead>
+                      <TableHead className="text-foreground">Location</TableHead>
+                      <TableHead className="text-foreground">Status</TableHead>
+                      <TableHead className="text-foreground">Last Seen</TableHead>
+                      <TableHead className="text-foreground">Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -325,20 +325,20 @@ export function HealthDashboard() {
                       <TableRow
                         key={animal.id}
                         onClick={() => setSelectedAnimal(animal)}
-                        className="cursor-pointer hover:bg-[#0B3D2E] border-[#14532D]"
+                        className="cursor-pointer hover:bg-secondary border-border"
                       >
-                        <TableCell className="font-medium text-[#E5E7EB]">{animal.id}</TableCell>
-                        <TableCell className="text-[#E5E7EB]">{animal.name}</TableCell>
-                        <TableCell className="text-[#E5E7EB]">{animal.species}</TableCell>
-                        <TableCell className="text-[#E5E7EB]">{animal.age}</TableCell>
-                        <TableCell className="text-[#E5E7EB]">{animal.gender}</TableCell>
-                        <TableCell className="text-[#E5E7EB]">{animal.location}</TableCell>
+                        <TableCell className="font-medium text-foreground">{animal.id}</TableCell>
+                        <TableCell className="text-foreground">{animal.name}</TableCell>
+                        <TableCell className="text-foreground">{animal.species}</TableCell>
+                        <TableCell className="text-foreground">{animal.age}</TableCell>
+                        <TableCell className="text-foreground">{animal.gender}</TableCell>
+                        <TableCell className="text-foreground">{animal.location}</TableCell>
                         <TableCell>
                           <Badge className={STATUS_BADGE_COLORS[animal.status]}>
                             {animal.status}
                           </Badge>
                         </TableCell>
-                        <TableCell className="text-[#E5E7EB]">{animal.lastSeen}</TableCell>
+                        <TableCell className="text-foreground">{animal.lastSeen}</TableCell>
                         <TableCell>
                           <Button
                             variant="ghost"
@@ -347,7 +347,7 @@ export function HealthDashboard() {
                               e.stopPropagation()
                               setSelectedAnimal(animal)
                             }}
-                            className="text-[#16A34A] hover:text-[#10b981]"
+                            className="text-accent hover:text-[#10b981]"
                           >
                             <Eye className="h-4 w-4" />
                           </Button>
@@ -363,23 +363,23 @@ export function HealthDashboard() {
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="border-[#14532D] hover:bg-[#0B3D2E]">
-                      <TableHead className="text-[#E5E7EB]">ID</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Name</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Species</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Location</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Status</TableHead>
+                    <TableRow className="border-border hover:bg-secondary">
+                      <TableHead className="text-foreground">ID</TableHead>
+                      <TableHead className="text-foreground">Name</TableHead>
+                      <TableHead className="text-foreground">Species</TableHead>
+                      <TableHead className="text-foreground">Location</TableHead>
+                      <TableHead className="text-foreground">Status</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {filteredAnimals
                       .filter((a) => a.tracked)
                       .map((animal) => (
-                        <TableRow key={animal.id} className="cursor-pointer hover:bg-[#0B3D2E] border-[#14532D]">
-                          <TableCell className="text-[#E5E7EB]">{animal.id}</TableCell>
-                          <TableCell className="text-[#E5E7EB]">{animal.name}</TableCell>
-                          <TableCell className="text-[#E5E7EB]">{animal.species}</TableCell>
-                          <TableCell className="text-[#E5E7EB]">{animal.location}</TableCell>
+                        <TableRow key={animal.id} className="cursor-pointer hover:bg-secondary border-border">
+                          <TableCell className="text-foreground">{animal.id}</TableCell>
+                          <TableCell className="text-foreground">{animal.name}</TableCell>
+                          <TableCell className="text-foreground">{animal.species}</TableCell>
+                          <TableCell className="text-foreground">{animal.location}</TableCell>
                           <TableCell>
                             <Badge className={STATUS_BADGE_COLORS[animal.status]}>
                               {animal.status}
@@ -396,23 +396,23 @@ export function HealthDashboard() {
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="border-[#14532D] hover:bg-[#0B3D2E]">
-                      <TableHead className="text-[#E5E7EB]">ID</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Name</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Species</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Alert Type</TableHead>
-                      <TableHead className="text-[#E5E7EB]">Severity</TableHead>
+                    <TableRow className="border-border hover:bg-secondary">
+                      <TableHead className="text-foreground">ID</TableHead>
+                      <TableHead className="text-foreground">Name</TableHead>
+                      <TableHead className="text-foreground">Species</TableHead>
+                      <TableHead className="text-foreground">Alert Type</TableHead>
+                      <TableHead className="text-foreground">Severity</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {filteredAnimals
                       .filter((a) => a.hasAlert || a.status === "Poor" || a.status === "Critical")
                       .map((animal) => (
-                        <TableRow key={animal.id} className="cursor-pointer hover:bg-[#0B3D2E] border-[#14532D]">
-                          <TableCell className="text-[#E5E7EB]">{animal.id}</TableCell>
-                          <TableCell className="text-[#E5E7EB]">{animal.name}</TableCell>
-                          <TableCell className="text-[#E5E7EB]">{animal.species}</TableCell>
-                          <TableCell className="text-[#E5E7EB]">Health</TableCell>
+                        <TableRow key={animal.id} className="cursor-pointer hover:bg-secondary border-border">
+                          <TableCell className="text-foreground">{animal.id}</TableCell>
+                          <TableCell className="text-foreground">{animal.name}</TableCell>
+                          <TableCell className="text-foreground">{animal.species}</TableCell>
+                          <TableCell className="text-foreground">Health</TableCell>
                           <TableCell>
                             <Badge className={STATUS_BADGE_COLORS[animal.status]}>
                               {animal.status}
@@ -431,10 +431,10 @@ export function HealthDashboard() {
       {/* Health Interventions and Trends - Only show when animal is selected */}
       {selectedAnimal && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card className="border-[#14532D] bg-[#0F172A]">
+          <Card className="border-border bg-background">
             <CardHeader>
-              <CardTitle className="text-[#E5E7EB]">Health Interventions</CardTitle>
-              <CardDescription className="text-[#9CA3AF]">
+              <CardTitle className="text-foreground">Health Interventions</CardTitle>
+              <CardDescription className="text-muted-foreground">
                 Medical treatments for {selectedAnimal.name}
               </CardDescription>
             </CardHeader>
@@ -456,10 +456,10 @@ export function HealthDashboard() {
             </CardContent>
           </Card>
 
-          <Card className="border-[#14532D] bg-[#0F172A]">
+          <Card className="border-border bg-background">
             <CardHeader>
-              <CardTitle className="text-[#E5E7EB]">Health Trends Analysis</CardTitle>
-              <CardDescription className="text-[#9CA3AF]">
+              <CardTitle className="text-foreground">Health Trends Analysis</CardTitle>
+              <CardDescription className="text-muted-foreground">
                 4-week health trend for {selectedAnimal.name}
               </CardDescription>
             </CardHeader>
@@ -496,10 +496,10 @@ export function HealthDashboard() {
 
       {/* Status Filter Drawer */}
       <Drawer open={statusDrawerOpen} onOpenChange={setStatusDrawerOpen}>
-        <DrawerContent className="bg-[#0F172A] border-[#14532D]">
+        <DrawerContent className="bg-background border-border">
           <DrawerHeader>
-            <DrawerTitle className="text-[#E5E7EB]">Filter by Health Status</DrawerTitle>
-            <DrawerDescription className="text-[#9CA3AF]">
+            <DrawerTitle className="text-foreground">Filter by Health Status</DrawerTitle>
+            <DrawerDescription className="text-muted-foreground">
               Select a health status to view animals with that status
             </DrawerDescription>
           </DrawerHeader>
@@ -510,7 +510,7 @@ export function HealthDashboard() {
                 <Button
                   key={status}
                   variant="outline"
-                  className="w-full justify-between border-[#14532D] text-[#E5E7EB] hover:bg-[#0B3D2E]"
+                  className="w-full justify-between border-border text-foreground hover:bg-secondary"
                   onClick={() => handleSelectStatusFromDrawer(status)}
                 >
                   <div className="flex items-center gap-2">
@@ -520,7 +520,7 @@ export function HealthDashboard() {
                     />
                     {status}
                   </div>
-                  <span className="text-sm text-[#9CA3AF]">{count} animals</span>
+                  <span className="text-sm text-muted-foreground">{count} animals</span>
                 </Button>
               )
             })}

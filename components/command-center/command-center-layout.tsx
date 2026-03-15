@@ -19,16 +19,16 @@ export function CommandCenterLayout({
   return (
     <div className="flex flex-col h-screen bg-gradient-to-b from-[#0F172A] to-[#111827] overflow-hidden">
       {/* Top Bar - System Status and Controls */}
-      <div className="border-b border-[#14532D] bg-[#0F172A] shadow-lg flex-shrink-0">
+      <div className="border-b border-border bg-background shadow-lg flex-shrink-0">
         <div className="px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <h1 className="text-2xl font-bold text-[#E5E7EB] tracking-wide">
+            <h1 className="text-2xl font-bold text-foreground tracking-wide">
               W.A.T.C.H Command Center
             </h1>
             <div className="flex gap-3 ml-6">
-              <div className="flex items-center gap-2 px-3 py-1 bg-[#0B3D2E] rounded-full border border-[#16A34A]">
-                <div className="w-2 h-2 bg-[#16A34A] rounded-full animate-pulse" />
-                <span className="text-xs text-[#16A34A] font-medium">System Active</span>
+              <div className="flex items-center gap-2 px-3 py-1 bg-secondary rounded-full border border-[#16A34A]">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                <span className="text-xs text-accent font-medium">System Active</span>
               </div>
               <div className="flex items-center gap-2 px-3 py-1 bg-[#1C2A3A] rounded-full border border-[#2563EB]">
                 <Activity className="w-3 h-3 text-[#2563EB]" />
@@ -72,10 +72,10 @@ export function CommandCenterCard({
   className?: string
 }) {
   return (
-    <div className={`bg-[#111827] border border-[#14532D] rounded-lg shadow-lg overflow-hidden ${className}`}>
-      <div className="bg-gradient-to-r from-[#0B3D2E] to-[#14532D] px-6 py-4 border-b border-[#14532D] flex items-center gap-3">
-        {Icon && <Icon className="w-5 h-5 text-[#16A34A]" />}
-        <h3 className="text-base font-semibold text-[#E5E7EB]">{title}</h3>
+    <div className={`bg-card border border-border rounded-lg shadow-lg overflow-hidden ${className}`}>
+      <div className="bg-gradient-to-r from-[#0B3D2E] to-[#14532D] px-6 py-4 border-b border-border flex items-center gap-3">
+        {Icon && <Icon className="w-5 h-5 text-accent" />}
+        <h3 className="text-base font-semibold text-foreground">{title}</h3>
       </div>
       <div className="p-6">
         {children}
@@ -93,10 +93,10 @@ export function StatusBadge({
 }) {
   const statusConfig = {
     active: {
-      bg: 'bg-[#0B3D2E]',
+      bg: 'bg-secondary',
       border: 'border-[#16A34A]',
-      dot: 'bg-[#16A34A]',
-      text: 'text-[#16A34A]',
+      dot: 'bg-primary',
+      text: 'text-accent',
     },
     warning: {
       bg: 'bg-[#3F2A00]',
@@ -140,12 +140,12 @@ export function MetricCard({
   icon?: any
 }) {
   return (
-    <div className="bg-[#111827] border border-[#14532D] rounded-lg p-4">
+    <div className="bg-card border border-border rounded-lg p-4">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-xs text-[#9CA3AF] uppercase tracking-wider mb-1">{label}</p>
-          <p className="text-2xl font-bold text-[#E5E7EB]">
-            {value}{unit && <span className="text-sm text-[#9CA3AF] ml-1">{unit}</span>}
+          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">{label}</p>
+          <p className="text-2xl font-bold text-foreground">
+            {value}{unit && <span className="text-sm text-muted-foreground ml-1">{unit}</span>}
           </p>
         </div>
         {Icon && <Icon className="w-6 h-6 text-[#0B3D2E]" />}

@@ -17,7 +17,7 @@ export default function AntiPoachingPage() {
         <PageHeader title="Anti-Poaching Intelligence" description="Monitor threats, analyze poaching risks, and plan patrol routes" />
         
         <Tabs defaultValue="threats" className="w-full mt-6">
-          <TabsList className="bg-[#111827] border border-[#14532D]">
+          <TabsList className="bg-card border border-border">
             <TabsTrigger value="threats">Threat Analysis</TabsTrigger>
             <TabsTrigger value="patrols">Patrol Routes</TabsTrigger>
           </TabsList>

@@ -16,7 +16,7 @@ export default function ResearchPage() {
       <div className="container mx-auto py-6">
         <PageHeader title="Research & Conservation Insights" description="Analyze migration patterns, population dynamics, and conservation trends" />
         <Tabs defaultValue="migration" className="w-full mt-6">
-          <TabsList className="grid w-full grid-cols-2 bg-[#111827] border border-[#14532D]">
+          <TabsList className="grid w-full grid-cols-2 bg-card border border-border">
             <TabsTrigger value="migration">Migration Patterns</TabsTrigger>
             <TabsTrigger value="population">Population Analysis</TabsTrigger>
           </TabsList>

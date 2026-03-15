@@ -4,139 +4,133 @@
 
 @layer base {
   :root {
-    /* Government Wildlife Protection Command Center Theme */
-    /* Nature-inspired government theme with forest greens and earth tones */
-    
     /* Main Background System */
-    --background: 210 20% 6%; /* Dark Slate #0F172A */
-    --foreground: 40 9% 90%; /* Primary Text #E5E7EB */
+    --background: 0 0% 4%; /* Deep black #0A0A0A */
+    --foreground: 0 0% 96%; /* Soft white #F5F5F5 */
 
     /* Sidebar & Navigation */
-    --sidebar-bg: 210 20% 6%; /* Dark Slate #0F172A */
-    --sidebar-hover: 210 20% 12%; /* Lighter Dark Slate */
-    --sidebar-active: 150 85% 28%; /* Forest Green #0B3D2E */
-    --sidebar-icon: 150 85% 28%; /* Forest Green Icon */
-    --sidebar-text: 40 9% 90%; /* Primary Text #E5E7EB */
+    --sidebar-bg: 0 0% 4%; /* Deep black */
+    --sidebar-hover: 0 0% 9%; /* Charcoal */
+    --sidebar-active: 145 63% 49%; /* Emerald green glow or highlight */
+    --sidebar-icon: 46 65% 52%; /* Gold */
+    --sidebar-text: 0 0% 96%; /* Soft white */
 
-    /* Cards & Panels - Moss Green with subtle borders */
-    --card: 210 20% 10%; /* Charcoal #111827 */
-    --card-foreground: 40 9% 90%; /* Primary Text #E5E7EB */
-    --card-border: 150 60% 35%; /* Deep Moss Green #14532D */
-    --card-hover: 210 20% 13%; /* Lighter Charcoal */
+    /* Cards & Panels - Charcoal with subtle Gold borders */
+    --card: 0 0% 9%; /* Charcoal black #161616 or #111111 */
+    --card-foreground: 0 0% 96%; /* Soft white */
+    --card-border: 46 65% 52%; /* Metallic gold #D4AF37 */
+    --card-hover: 0 0% 12%; 
 
     /* Popover */
-    --popover: 210 20% 10%; /* Charcoal #111827 */
-    --popover-foreground: 40 9% 90%; /* Primary Text #E5E7EB */
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 96%;
 
     /* Primary Button (Action) */
-    --primary: 150 85% 28%; /* Forest Green #0B3D2E */
-    --primary-foreground: 40 9% 90%; /* Primary Text */
-    --primary-hover: 150 85% 20%; /* Darker Forest Green */
+    --primary: 46 65% 52%; /* Metallic gold #D4AF37 */
+    --primary-foreground: 0 0% 4%; /* Deep black #0A0A0A */
+    --primary-hover: 46 65% 45%;
 
     /* Secondary Button */
-    --secondary: 150 60% 35%; /* Deep Moss Green */
-    --secondary-foreground: 40 9% 90%; /* Primary Text */
-    --secondary-hover: 150 60% 28%; /* Hover */
+    --secondary: 0 0% 9%; /* Charcoal dark background */
+    --secondary-foreground: 145 63% 49%; /* Bright emerald green text/outline */
+    --secondary-hover: 0 0% 15%;
 
     /* Muted & Disabled */
-    --muted: 210 20% 15%; /* Darker Slate */
-    --muted-foreground: 0 0% 60%; /* Secondary Text #9CA3AF */
+    --muted: 0 0% 12%; 
+    --muted-foreground: 240 5% 65%; /* Gray #A1A1AA */
 
     /* Accent */
-    --accent: 150 85% 28%; /* Forest Green #0B3D2E */
-    --accent-foreground: 40 9% 90%; /* Primary Text */
+    --accent: 145 63% 49%; /* Bright emerald green #2ECC71 */
+    --accent-foreground: 0 0% 4%; 
 
-    /* Danger */
-    --destructive: 0 100% 50%; /* Alert Red #DC2626 */
-    --destructive-foreground: 40 9% 90%; /* Soft Text */
+    /* Danger / Status */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 96%;
     
-    /* Status Colors */
-    --warning: 45 100% 59%; /* Warning Amber #F59E0B */
-    --success: 142 72% 29%; /* Safe Green #16A34A */
-    --info: 217 91% 60%; /* Info Blue #2563EB */
-
-    /* Warning */
-    --warning: 35 100% 50%; /* Neon Orange */
-    --warning-foreground: 225 45% 8%; /* Dark Background */
+    --warning: 46 65% 52%; /* Gold */
+    --warning-foreground: 0 0% 4%;
+    
+    --success: 145 63% 49%; /* Bright emerald green #2ECC71 */
+    --info: 217 91% 60%; 
 
     /* Borders & Inputs */
-    --border: 35 100% 50%; /* Neon Orange Border */
-    --input: 225 45% 12%; /* Dark Background Input */
-    --input-border: 35 100% 50%; /* Neon Orange Border */
-    --ring: 35 100% 50%; /* Neon Orange Ring */
+    --border: 46 65% 52%; /* Metallic gold #D4AF37 */
+    --input: 0 0% 7%; /* Extra dark input background */
+    --input-border: 46 65% 52%; 
+    --ring: 46 65% 52%; /* Gold ring glow */
 
     /* Alert Colors */
-    --alert-low: 201 92% 48%; /* Electric Blue */
-    --alert-warning: 35 100% 50%; /* Neon Orange */
-    --alert-threat: 35 100% 50%; /* Neon Orange */
-    --alert-critical: 0 100% 50%; /* Red */
+    --alert-low: 150 62% 31%; /* Forest green */
+    --alert-warning: 46 65% 52%; /* Gold */
+    --alert-threat: 0 84% 60%; 
+    --alert-critical: 0 100% 50%; 
 
-    /* Chart Colors */
-    --chart-primary: 35 100% 50%; /* Neon Orange */
-    --chart-secondary: 201 92% 48%; /* Electric Blue */
-    --chart-highlight: 35 100% 50%; /* Neon Orange */
-    --chart-grid: 225 45% 15%; /* Grid Lines */
-    --chart-label: 40 100% 92%; /* Soft White Labels */
-    --chart-bg: 225 45% 8%; /* Dark Background */
+    /* Chart Colors (green gradients) */
+    --chart-primary: 145 63% 49%; /* Emerald green #2ECC71 */
+    --chart-secondary: 150 62% 31%; /* Forest green #1E7F4F */
+    --chart-highlight: 46 65% 52%; /* Gold */
+    --chart-grid: 0 0% 15%; 
+    --chart-label: 240 5% 65%; /* Gray #A1A1AA */
+    --chart-bg: 0 0% 4%; /* Deep black */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    /* Dark mode uses same colors */
-    --background: 225 45% 8%; /* Dark Background #0B132B */
-    --foreground: 40 100% 92%; /* Soft White Text #EAEAEA */
+    /* Since the user wants a dark premium interface globally,
+       we will map .dark to the exact same colors. */
+    --background: 0 0% 4%; 
+    --foreground: 0 0% 96%;
 
-    --sidebar-bg: 225 45% 8%; /* Dark Background #0B132B */
-    --sidebar-hover: 225 45% 15%; /* Lighter Dark Background */
-    --sidebar-active: 201 92% 48%; /* Electric Blue #1C7ED6 */
-    --sidebar-icon: 35 100% 50%; /* Neon Orange Icon #FF7A00 */
-    --sidebar-text: 40 100% 92%; /* Soft White Text #EAEAEA */
+    --sidebar-bg: 0 0% 4%; 
+    --sidebar-hover: 0 0% 9%;
+    --sidebar-active: 145 63% 49%; 
+    --sidebar-icon: 46 65% 52%; 
+    --sidebar-text: 0 0% 96%; 
 
-    --card: 201 92% 48%; /* Electric Blue #1C7ED6 */
-    --card-foreground: 40 100% 92%; /* Soft White Text #EAEAEA */
-    --card-border: 35 100% 50%; /* Neon Orange Border #FF7A00 */
-    --card-hover: 201 92% 55%; /* Lighter Electric Blue */
+    --card: 0 0% 9%; 
+    --card-foreground: 0 0% 96%; 
+    --card-border: 46 65% 52%; 
+    --card-hover: 0 0% 12%; 
 
-    --popover: 201 92% 48%; /* Electric Blue #1C7ED6 */
-    --popover-foreground: 40 100% 92%; /* Soft White Text #EAEAEA */
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 35 100% 50%; /* Neon Orange #FF7A00 */
-    --primary-foreground: 225 45% 8%; /* Dark Background */
-    --primary-hover: 35 100% 45%; /* Darker Neon Orange */
+    --primary: 46 65% 52%; 
+    --primary-foreground: 0 0% 4%; 
+    --primary-hover: 46 65% 45%;
 
-    --secondary: 201 92% 48%; /* Electric Blue */
-    --secondary-foreground: 40 100% 92%; /* Soft White Text */
-    --secondary-hover: 201 92% 55%; /* Hover */
+    --secondary: 0 0% 9%; 
+    --secondary-foreground: 145 63% 49%; 
+    --secondary-hover: 0 0% 15%;
 
-    --muted: 225 45% 15%; /* Dark Background lighter */
-    --muted-foreground: 40 100% 75%; /* Muted White Text */
+    --muted: 0 0% 12%; 
+    --muted-foreground: 240 5% 65%; 
 
-    --accent: 35 100% 50%; /* Neon Orange #FF7A00 */
-    --accent-foreground: 225 45% 8%; /* Dark Background */
+    --accent: 145 63% 49%; 
+    --accent-foreground: 0 0% 4%; 
 
-    --destructive: 0 100% 50%; /* Red */
-    --destructive-foreground: 40 100% 92%; /* Soft White Text */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 96%;
 
-    --warning: 35 100% 50%; /* Neon Orange */
-    --warning-foreground: 225 45% 8%; /* Dark Background */
+    --warning: 46 65% 52%; 
+    --warning-foreground: 0 0% 4%;
 
-    --border: 35 100% 50%; /* Neon Orange Border */
-    --input: 225 45% 12%; /* Dark Background Input */
-    --input-border: 35 100% 50%; /* Neon Orange Border */
-    --ring: 35 100% 50%; /* Neon Orange Ring */
+    --border: 46 65% 52%; 
+    --input: 0 0% 7%; 
+    --ring: 46 65% 52%; 
 
-    --alert-low: 201 92% 48%; /* Electric Blue */
-    --alert-warning: 35 100% 50%; /* Neon Orange */
-    --alert-threat: 35 100% 50%; /* Neon Orange */
-    --alert-critical: 0 100% 50%; /* Red */
+    --alert-low: 150 62% 31%; 
+    --alert-warning: 46 65% 52%; 
+    --alert-threat: 0 84% 60%; 
+    --alert-critical: 0 100% 50%; 
 
-    --chart-primary: 35 100% 50%; /* Neon Orange */
-    --chart-secondary: 201 92% 48%; /* Electric Blue */
-    --chart-highlight: 35 100% 50%; /* Neon Orange */
-    --chart-grid: 225 45% 15%; /* Grid Lines */
-    --chart-label: 40 100% 92%; /* Soft White Labels */
-    --chart-bg: 225 45% 8%; /* Dark Background */
+    --chart-primary: 145 63% 49%; 
+    --chart-secondary: 150 62% 31%; 
+    --chart-highlight: 46 65% 52%; 
+    --chart-grid: 0 0% 15%; 
+    --chart-label: 240 5% 65%; 
+    --chart-bg: 0 0% 4%; 
   }
 }
 
@@ -153,30 +147,14 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Dark Background with Electric Blue Gradient */
-    background: linear-gradient(135deg, #0B132B, #1C3A52);
+    background-color: #0A0A0A;
     background-attachment: fixed;
     min-height: 100vh;
     height: auto;
     overflow-x: hidden;
   }
 
-  .dark body {
-    background: linear-gradient(135deg, #0B132B, #1C3A52);
-    background-attachment: fixed;
-  }
-
-  .dark body {
-    background: linear-gradient(135deg, #87CEEB, #6BB6D6);
-    background-attachment: fixed;
-  }
-
-  .dark body {
-    background: linear-gradient(135deg, #87CEEB, #B0E0E6);
-    background-attachment: fixed;
-  }
-
-  /* Wildlife-themed scrollbar */
+  /* Custom scrollbar styles matching the new theme */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -188,173 +166,87 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary) / 0.6);
+    background: hsl(var(--card-border) / 0.6);
     border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.8);
+    background: hsl(var(--card-border) / 1);
   }
-}
-
-/* Wildlife-specific utility classes */
-.text-wildlife-orange {
-  color: #f56a00;
-}
-
-.bg-wildlife-orange {
-  background-color: #f56a00;
-}
-
-.border-wildlife-orange {
-  border-color: #f56a00;
-}
-
-.text-wildlife-green {
-  color: #2e7d32;
-}
-
-.bg-wildlife-green {
-  background-color: #2e7d32;
-}
-
-.border-wildlife-green {
-  border-color: #2e7d32;
-}
-
-/* Leaf pattern background */
-.leaf-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 30 C35 25, 40 15, 30 5 C20 15, 25 25, 30 30 C35 35, 45 40, 55 30 C45 20, 35 25, 30 30 C25 35, 15 40, 5 30 C15 20, 25 25, 30 30 C25 35, 20 45, 30 55 C40 45, 35 35, 30 30' fill='none' stroke='%232e7d32' stroke-width='0.5' stroke-opacity='0.1'/%3E%3C/svg%3E");
 }
 
 @layer components {
-  /* Light Background Text Utility */
-  .text-on-light {
-    @apply text-slate-700 dark:text-slate-200;
-  }
 
-  .label-on-light {
-    @apply text-slate-700 dark:text-slate-200 font-semibold;
-  }
-
-  .placeholder-on-light::placeholder {
-    @apply text-slate-500 dark:text-slate-400;
-  }
-
-  /* Sky Blue & Forest Green Button System */
-  .btn-primary {
-    @apply bg-[#1B5E20] text-[#FF9500] font-semibold px-4 py-2 rounded transition-all duration-200;
-    box-shadow: 0 0 12px rgba(27, 94, 32, 0.4);
-  }
-
-  .btn-primary:hover {
-    @apply bg-[#2A7D31];
-    box-shadow: 0 0 16px rgba(27, 94, 32, 0.6), 0 0 24px rgba(27, 94, 32, 0.3);
-  }
-
-  .btn-secondary {
-    @apply bg-[#87CEEB] border border-[#1B5E20] text-[#FF9500] font-semibold px-4 py-2 rounded transition-all duration-200;
-  }
-
-  .btn-secondary:hover {
-    @apply bg-[#6BB6D6];
-    box-shadow: 0 0 10px rgba(135, 206, 235, 0.6);
-  }
-
-  .btn-danger {
-    @apply bg-[#FF3D3D] text-white font-semibold px-4 py-2 rounded transition-all duration-200;
-    box-shadow: 0 0 12px rgba(255, 61, 61, 0.4);
-  }
-
-  .btn-danger:hover {
-    @apply bg-[#FF1A1A];
-    box-shadow: 0 0 16px rgba(255, 61, 61, 0.6);
-  }
-
-  /* Sky Blue Card System - Glass Effect */
+  /* Modern Card Glassmorphism - Minimal Effect */
   .card {
-    @apply bg-[#87CEEB] border border-[#66BB6A] rounded-lg backdrop-blur-sm transition-all duration-200;
-    box-shadow: rgba(0, 0, 0, 0.2);
+    @apply bg-card text-card-foreground border rounded-lg backdrop-blur-[2px] transition-all duration-300;
+    border-color: rgba(212, 175, 55, 0.3); /* Subtle gold border by default */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   }
 
   .card:hover {
-    @apply bg-[#6BB6D6] border-[#1B5E20];
-    box-shadow: 0 0 10px rgba(102, 187, 106, 0.6), inset 0 0 10px rgba(102, 187, 106, 0.1);
-    transform: translateY(-3px);
+    @apply border-border;
+    background-color: hsl(var(--card-hover));
+    border-color: rgba(212, 175, 55, 0.8);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3), inset 0 0 10px rgba(212, 175, 55, 0.05);
+    transform: translateY(-2px);
   }
 
-  /* Status Colors */
-  .status-excellent {
-    @apply bg-[#22FF88] text-[#022A1D];
-  }
-  .status-good {
-    @apply bg-[#00E5A0] text-[#022A1D];
-  }
-  .status-fair {
-    @apply bg-[#FFD166] text-[#022A1D];
-  }
-  .status-poor {
-    @apply bg-[#FF9F1C] text-white;
-  }
-  .status-critical {
-    @apply bg-[#FF3B3B] text-white;
-    animation: pulse-critical 1s infinite;
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold px-4 py-2 rounded transition-all duration-300;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
   }
 
-  /* Priority Colors */
-  .priority-urgent {
-    @apply bg-[#FF3B3B] text-white;
-  }
-  .priority-high {
-    @apply bg-[#FF9F1C] text-white;
-  }
-  .priority-medium {
-    @apply bg-[#FFD166] text-[#022A1D];
-  }
-  .priority-low {
-    @apply bg-[#22FF88] text-[#022A1D];
+  .btn-primary:hover {
+    background-color: hsl(var(--primary-hover));
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.2);
   }
 
-  /* Wildlife-themed elements */
-  .wildlife-card {
-    @apply border-wildlife-green bg-white dark:bg-gray-800;
+  /* Secondary Button: Dark bg with green outline */
+  .btn-secondary {
+    @apply bg-secondary border border-accent text-accent font-semibold px-4 py-2 rounded transition-all duration-300;
   }
 
-  .wildlife-button-primary {
-    @apply bg-wildlife-green text-white hover:bg-wildlife-green/90;
+  .btn-secondary:hover {
+    @apply bg-accent/10;
+    background-color: hsl(var(--secondary-hover));
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
   }
 
-  .wildlife-button-secondary {
-    @apply bg-wildlife-orange text-white hover:bg-wildlife-orange/90;
+  /* Glow Effects */
+  .glow-effect {
+    @apply transition-all duration-300;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
   }
 
-  /* Leaf-shaped button */
-  .leaf-button {
-    clip-path: ellipse(50% 50% at 50% 50%);
-    @apply bg-wildlife-green text-white hover:bg-wildlife-green/90 transition-all;
+  .glow-effect:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.2);
+    transform: translateY(-2px);
   }
 
-  .leaf-button:hover {
-    clip-path: ellipse(51% 51% at 50% 50%);
+  /* Alerts / System notifications (Green accents) */
+  .alert-green {
+    @apply bg-background border-l-4 rounded-r-md p-4 text-foreground shadow-sm;
+    border-left-color: #2ECC71;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.1);
   }
 
-  /* Mobile navigation */
-  .mobile-nav-button {
-    @apply fixed z-50 top-4 left-4 bg-primary text-primary-foreground rounded-full p-3 shadow-lg;
+  /* Sidebar Item Styling */
+  .sidebar-item {
+    @apply px-4 py-2 text-muted-foreground rounded transition-all duration-300 cursor-pointer border border-transparent;
   }
 
-  .mobile-nav-overlay {
-    @apply fixed inset-0 z-40 bg-black/50 backdrop-blur-sm;
+  .sidebar-item:hover {
+    @apply text-foreground;
+    background-color: hsl(var(--card-hover));
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: inset 2px 0 0 rgba(212, 175, 55, 0.8);
   }
 
-  .mobile-nav-panel {
-    @apply fixed inset-y-0 left-0 z-50 w-3/4 max-w-xs bg-sidebar border-r border-sidebar-border shadow-xl;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .mobile-nav-panel.open {
-    transform: translateX(0);
+  .sidebar-item.active {
+    @apply bg-secondary text-primary border-transparent;
+    box-shadow: inset 3px 0 0 #D4AF37, 0 0 15px rgba(212, 175, 55, 0.1);
   }
 
   /* Responsive utilities */
@@ -365,144 +257,20 @@
   .responsive-grid {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
   }
-
-  .responsive-padding {
-    @apply p-2 sm:p-4 md:p-6 lg:p-8;
-  }
-
-  /* Sky Blue & Forest Green Hover & Glow Effects */
-  .glow-effect {
-    @apply transition-all duration-200;
-    box-shadow: 0 0 10px rgba(102, 187, 106, 0.6);
-  }
-
-  .glow-effect:hover {
-    box-shadow: 0 0 20px rgba(102, 187, 106, 0.8), 0 0 30px rgba(102, 187, 106, 0.4);
-    transform: translateY(-2px);
-  }
-
-  .glow-warning {
-    box-shadow: 0 0 10px rgba(255, 149, 0, 0.6);
-  }
-
-  .glow-warning:hover {
-    box-shadow: 0 0 20px rgba(255, 149, 0, 0.8), 0 0 30px rgba(255, 149, 0, 0.4);
-  }
-
-  .glow-danger {
-    box-shadow: 0 0 10px rgba(255, 61, 61, 0.6);
-  }
-
-  .glow-danger:hover {
-    box-shadow: 0 0 20px rgba(255, 61, 61, 0.8), 0 0 30px rgba(255, 61, 61, 0.4);
-  }
-
-  /* Sidebar Item Styling */
-  .sidebar-item {
-    @apply px-4 py-2 text-[#FF9500] rounded transition-all duration-200 cursor-pointer;
-  }
-
-  .sidebar-item:hover {
-    @apply bg-[#6BB6D6];
-    box-shadow: 0 0 8px rgba(102, 187, 106, 0.4);
-  }
-
-  .sidebar-item.active {
-    @apply bg-[#1B5E20] text-[#FF9500];
-    box-shadow: 0 0 8px rgba(102, 187, 106, 0.6);
-  }
-
-  /* Leaf decorations */
-  .leaf-decoration {
-    @apply absolute pointer-events-none opacity-10;
-  }
-
-  .leaf-top-right {
-    @apply top-0 right-0 -rotate-12;
-  }
-
-  .leaf-bottom-left {
-    @apply bottom-0 left-0 rotate-45;
-  }
-
-  .leaf-decoration-container {
-    @apply relative overflow-hidden;
-  }
-
-  .leaf-card {
-    @apply relative border-2 rounded-lg shadow-md overflow-hidden;
-  }
-
-  /* Responsive adjustments for mobile */
-  @media (max-width: 768px) {
-    .mobile-nav-button {
-      @apply top-3 left-3 p-2.5;
-    }
-
-    .mobile-nav-button svg {
-      @apply h-5 w-5;
-    }
-
-    /* Prevent content from being cut off on smaller screens */
-    .container {
-      @apply px-4;
-    }
-
-    /* Improve spacing on mobile */
-    .space-y-6 > * {
-      margin-top: 1.25rem;
-      margin-bottom: 1.25rem;
-    }
-  }
-
-  /* Additional mobile fixes */
-  @media (max-width: 640px) {
-    .card-header-mobile {
-      @apply flex-col items-start gap-2;
-    }
-
-    /* Fix for buttons stacking on mobile */
-    .mobile-button-fix {
-      @apply flex-col sm:flex-row w-full;
-    }
-
-    .mobile-button-fix > * {
-      @apply w-full mb-2 sm:mb-0 sm:w-auto;
-    }
-  }
-
-  /* Fix for overflow issues */
-  .overflow-fix {
-    @apply max-w-full overflow-hidden;
-  }
 }
 
-/* Custom scrollbar styles */
 @layer utilities {
-  .scrollbar-thin {
-    scrollbar-width: thin;
+  /* Green gradients for charts and analytics */
+  .bg-chart-gradient {
+    background: linear-gradient(to right, #1E7F4F, #2ECC71);
   }
-
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background-color: rgba(156, 163, 175, 0.5);
-    border-radius: 9999px;
-  }
-
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(156, 163, 175, 0.7);
+  
+  .bg-chart-gradient-vertical {
+    background: linear-gradient(to top, #1E7F4F, #2ECC71);
   }
 }
 
-/* Sky Blue & Forest Green Critical Alert Animation */
+/* Animations */
 @keyframes pulse-critical {
   0%, 100% {
     opacity: 1;
@@ -517,196 +285,19 @@
 @keyframes pulse-green {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 10px rgba(102, 187, 106, 0.6);
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
   }
   50% {
     opacity: 0.8;
-    box-shadow: 0 0 15px rgba(102, 187, 106, 0.8);
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.8);
   }
 }
 
 @keyframes glow-neon {
   0%, 100% {
-    box-shadow: 0 0 10px rgba(102, 187, 106, 0.4), inset 0 0 10px rgba(102, 187, 106, 0.1);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4), inset 0 0 10px rgba(212, 175, 55, 0.1);
   }
   50% {
-    box-shadow: 0 0 20px rgba(102, 187, 106, 0.8), inset 0 0 15px rgba(102, 187, 106, 0.2);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.2);
   }
-}
-
-/* Device-specific adjustments */
-@media (max-width: 640px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 768px) {
-  html {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 769px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-/* Fullscreen mode styles */
-:fullscreen,
-::backdrop {
-  background-color: white;
-}
-
-.dark :fullscreen,
-.dark ::backdrop {
-  background-color: hsl(222.2, 84%, 4.9%);
-}
-
-/* Fix for z-index issues */
-.z-fix-1 {
-  z-index: 1;
-}
-
-.z-fix-2 {
-  z-index: 2;
-}
-
-.z-fix-3 {
-  z-index: 3;
-}
-
-/* Fix for content overflow */
-.content-container {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* Improved spacing for components */
-.component-spacing > * + * {
-  margin-top: 1rem;
-}
-
-@media (min-width: 768px) {
-  .component-spacing > * + * {
-    margin-top: 1.5rem;
-  }
-}
-
-/* Fix for modal positioning */
-.modal-fix {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 90vw;
-  max-height: 90vh;
-  overflow: auto;
-}
-
-/* Prevent text overflow */
-.text-ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Improved card layout */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-  }
-}
-
-/* Fix for flex layouts */
-.flex-fix {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-@media (min-width: 640px) {
-  .flex-fix {
-    flex-wrap: nowrap;
-    gap: 1rem;
-  }
-}
-
-/* Improved form layout */
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .form-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-}
-
-/* Fix for image aspect ratios */
-.aspect-fix {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-}
-
-.aspect-fix > * {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Fix for button alignment */
-.button-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-@media (min-width: 640px) {
-  .button-group {
-    flex-wrap: nowrap;
-  }
-}
-
-/* Fix for table overflow */
-.table-container {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Fix for sticky elements */
-.sticky-top {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background-color: inherit;
-}
-
-/* Fix for absolute positioned elements */
-.absolute-container {
-  position: relative;
-}
-
-.absolute-container > .absolute {
-  position: absolute;
 }

@@ -512,21 +512,21 @@ export function AlertsOverview() {
       </Tabs>
 
       {/* Analytics Link Card */}
-      <Card className="border-[#14532D] bg-[#0F172A]">
+      <Card className="border-border bg-background">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
-            <BarChart3 className="h-5 w-5 text-[#16A34A]" />
+          <CardTitle className="flex items-center gap-2 text-foreground">
+            <BarChart3 className="h-5 w-5 text-accent" />
             Health Analytics & Insights
           </CardTitle>
-          <CardDescription className="text-[#9CA3AF]">Analyze health patterns and trends</CardDescription>
+          <CardDescription className="text-muted-foreground">Analyze health patterns and trends</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-[#9CA3AF] mb-4">
+          <p className="text-sm text-muted-foreground mb-4">
             View comprehensive health status distribution, behavioral trends, and detailed animal health profiles to understand patterns behind alerts.
           </p>
           <Button
             asChild
-            className="w-full bg-[#16A34A] hover:bg-[#15803d] text-white"
+            className="w-full bg-primary hover:bg-primary/90 text-white"
           >
             <Link href="/analytics" className="flex items-center justify-center gap-2">
               View Analytics

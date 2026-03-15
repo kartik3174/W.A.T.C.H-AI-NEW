@@ -117,17 +117,17 @@ function AIMonitoringDashboard() {
       </Card>
 
       <Tabs defaultValue="live-feed" value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 h-auto bg-[#111827] border-[#14532D]">
-          <TabsTrigger value="live-feed" className="py-2 text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">
+        <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 h-auto bg-card border-border">
+          <TabsTrigger value="live-feed" className="py-2 text-muted-foreground data-[state=active]:bg-secondary data-[state=active]:text-primary">
             Live Feed
           </TabsTrigger>
-          <TabsTrigger value="threats" className="py-2 text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">
+          <TabsTrigger value="threats" className="py-2 text-muted-foreground data-[state=active]:bg-secondary data-[state=active]:text-primary">
             Threat Alerts
           </TabsTrigger>
-          <TabsTrigger value="insights" className="py-2 text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">
+          <TabsTrigger value="insights" className="py-2 text-muted-foreground data-[state=active]:bg-secondary data-[state=active]:text-primary">
             Predictive Insights
           </TabsTrigger>
-          <TabsTrigger value="timeline" className="py-2 text-[#E5E7EB] data-[state=active]:bg-[#0B3D2E]">
+          <TabsTrigger value="timeline" className="py-2 text-muted-foreground data-[state=active]:bg-secondary data-[state=active]:text-primary">
             Activity Timeline
           </TabsTrigger>
         </TabsList>
@@ -158,21 +158,21 @@ function AIMonitoringDashboard() {
       </Tabs>
 
       {/* Analytics Link Card */}
-      <Card className="border-[#14532D] bg-[#0F172A]">
+      <Card className="border-border bg-card">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-[#E5E7EB]">
-            <BarChart3 className="h-5 w-5 text-[#16A34A]" />
+          <CardTitle className="flex items-center gap-2 text-card-foreground">
+            <BarChart3 className="h-5 w-5 text-accent" />
             Comprehensive Analytics
           </CardTitle>
-          <CardDescription className="text-[#9CA3AF]">View behavioral patterns and health trends</CardDescription>
+          <CardDescription className="text-muted-foreground">View behavioral patterns and health trends</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-[#9CA3AF] mb-4">
+          <p className="text-sm text-muted-foreground mb-4">
             Access detailed behavioral trends analysis, health status distribution, and comprehensive animal health profiles in the dedicated Analytics module.
           </p>
           <Button
             asChild
-            className="w-full bg-[#16A34A] hover:bg-[#15803d] text-white"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
           >
             <Link href="/analytics" className="flex items-center justify-center gap-2">
               View Analytics

@@ -32,12 +32,12 @@ export function RightPanelAlerts() {
     <CommandCenterCard title="Active Alerts" icon={AlertTriangle}>
       <div className="space-y-3">
         {alerts.map((alert) => (
-          <div key={alert.id} className="bg-[#0F172A] border border-[#14532D] rounded-lg p-3">
+          <div key={alert.id} className="bg-background border border-border rounded-lg p-3">
             <div className="flex items-start justify-between gap-2 mb-2">
-              <h4 className="text-sm font-medium text-[#E5E7EB]">{alert.title}</h4>
+              <h4 className="text-sm font-medium text-foreground">{alert.title}</h4>
               <StatusBadge status={alert.severity as any} label={alert.severity} />
             </div>
-            <p className="text-xs text-[#9CA3AF]">{alert.animal}</p>
+            <p className="text-xs text-muted-foreground">{alert.animal}</p>
             <p className="text-xs text-[#6B7280] mt-1">{alert.time}</p>
           </div>
         ))}
@@ -74,12 +74,12 @@ export function RightPanelInsights() {
         {insights.map((insight, idx) => {
           const Icon = insight.icon
           return (
-            <div key={idx} className="bg-[#0F172A] border border-[#14532D] rounded-lg p-3">
+            <div key={idx} className="bg-background border border-border rounded-lg p-3">
               <div className="flex items-start gap-3">
                 <Icon className={`w-5 h-5 flex-shrink-0 mt-0.5 ${insight.color}`} />
                 <div>
-                  <h4 className="text-sm font-medium text-[#E5E7EB]">{insight.title}</h4>
-                  <p className="text-xs text-[#9CA3AF] mt-1">{insight.description}</p>
+                  <h4 className="text-sm font-medium text-foreground">{insight.title}</h4>
+                  <p className="text-xs text-muted-foreground mt-1">{insight.description}</p>
                 </div>
               </div>
             </div>
@@ -135,11 +135,11 @@ export function BottomPanelDroneMissions() {
     <CommandCenterCard title="Drone Mission Status" icon={Zap} className="w-full">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
         {missions.map((mission) => (
-          <div key={mission.id} className="bg-[#0F172A] border border-[#14532D] rounded-lg p-4">
+          <div key={mission.id} className="bg-background border border-border rounded-lg p-4">
             <div className="flex items-start justify-between mb-3">
               <div>
-                <h4 className="text-sm font-semibold text-[#E5E7EB]">{mission.drone}</h4>
-                <p className="text-xs text-[#9CA3AF]">{mission.id}</p>
+                <h4 className="text-sm font-semibold text-foreground">{mission.drone}</h4>
+                <p className="text-xs text-muted-foreground">{mission.id}</p>
               </div>
               <StatusBadge
                 status={
@@ -152,13 +152,13 @@ export function BottomPanelDroneMissions() {
                 label={mission.status}
               />
             </div>
-            <p className="text-sm text-[#E5E7EB] mb-3">{mission.target}</p>
+            <p className="text-sm text-foreground mb-3">{mission.target}</p>
             <div className="space-y-2">
-              <div className="flex justify-between text-xs text-[#9CA3AF] mb-1">
+              <div className="flex justify-between text-xs text-muted-foreground mb-1">
                 <span>Progress</span>
                 <span>{mission.progress}%</span>
               </div>
-              <div className="w-full bg-[#111827] border border-[#14532D] rounded-full h-2 overflow-hidden">
+              <div className="w-full bg-card border border-border rounded-full h-2 overflow-hidden">
                 <div
                   className="bg-gradient-to-r from-[#0B3D2E] to-[#16A34A] h-full transition-all duration-300"
                   style={{ width: `${mission.progress}%` }}
@@ -187,10 +187,10 @@ export function BottomPanelActivityLog() {
         {activities.map((activity, idx) => (
           <div
             key={idx}
-            className="flex items-start gap-3 pb-2 border-b border-[#14532D] last:border-0"
+            className="flex items-start gap-3 pb-2 border-b border-border last:border-0"
           >
             <span className="text-xs font-mono text-[#2563EB] flex-shrink-0">{activity.time}</span>
-            <p className="text-xs text-[#9CA3AF]">{activity.event}</p>
+            <p className="text-xs text-muted-foreground">{activity.event}</p>
           </div>
         ))}
       </div>
