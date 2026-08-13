@@ -1,0 +1,329 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- Light Theme (Wildlife / Conservation Aesthetic) --- */
+    --background: 0 0% 98%; /* Off-white #FAFAFA */
+    --foreground: 0 0% 15%; /* Dark charcoal #262626 */
+
+    /* Sidebar & Navigation */
+    --sidebar-bg: 0 0% 95%; 
+    --sidebar-hover: 145 30% 90%; 
+    --sidebar-active: 145 63% 45%; 
+    --sidebar-icon: 38 75% 45%; /* Rust/Golden brown */
+    --sidebar-text: 0 0% 15%;
+
+    /* Cards & Panels */
+    --card: 0 0% 100%; /* Pure white */
+    --card-foreground: 0 0% 15%;
+    --card-border: 46 65% 52%; 
+    --card-hover: 145 30% 97%; 
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Primary Button (Action) */
+    --primary: 145 63% 35%; /* Deep forest green */
+    --primary-foreground: 0 0% 100%; 
+    --primary-hover: 145 63% 30%;
+
+    /* Secondary Button */
+    --secondary: 46 65% 52%; /* Gold */
+    --secondary-foreground: 0 0% 15%; 
+    --secondary-hover: 46 65% 45%;
+
+    /* Muted & Disabled */
+    --muted: 0 0% 93%; 
+    --muted-foreground: 0 0% 45%; 
+
+    /* Accent */
+    --accent: 38 75% 50%; /* Golden sunset orange */
+    --accent-foreground: 0 0% 100%; 
+
+    /* Status */
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --warning: 46 65% 52%;
+    --warning-foreground: 0 0% 15%;
+    
+    --success: 145 63% 45%;
+    --info: 217 91% 55%; 
+
+    /* Borders & Inputs */
+    --border: 0 0% 88%;
+    --input: 0 0% 98%;
+    --input-border: 0 0% 80%; 
+    --ring: 145 63% 35%;
+
+    /* Alert Colors (More natural in light mode) */
+    --alert-low: 150 62% 35%;
+    --alert-warning: 46 75% 45%;
+    --alert-threat: 0 84% 50%; 
+    --alert-critical: 0 100% 45%; 
+
+    /* Chart Colors */
+    --chart-primary: 145 63% 35%;
+    --chart-secondary: 150 62% 45%;
+    --chart-highlight: 38 75% 50%;
+    --chart-grid: 0 0% 90%; 
+    --chart-label: 0 0% 45%; 
+    --chart-bg: 0 0% 98%;
+
+    /* Header & Special Gradients */
+    --header-bg: 145 63% 35%;
+    --header-gradient: linear-gradient(to right, hsl(145 63% 25%), hsl(145 63% 35%));
+    --status-active-bg: 145 63% 90%;
+    --status-active-text: 145 63% 35%;
+    --status-mon-bg: 217 91% 90%;
+    --status-mon-text: 217 91% 45%;
+
+    --radius: 0.6rem;
+  }
+
+  .dark {
+    /* --- Premium Dark Theme (Existing) --- */
+    --background: 0 0% 4%; 
+    --foreground: 0 0% 96%;
+
+    --sidebar-bg: 0 0% 4%; 
+    --sidebar-hover: 0 0% 9%;
+    --sidebar-active: 145 63% 49%; 
+    --sidebar-icon: 46 65% 52%; 
+    --sidebar-text: 0 0% 96%; 
+
+    --card: 0 0% 9%; 
+    --card-foreground: 0 0% 96%; 
+    --card-border: 46 65% 52%; 
+    --card-hover: 0 0% 12%; 
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 46 65% 52%; 
+    --primary-foreground: 0 0% 4%; 
+    --primary-hover: 46 65% 45%;
+
+    --secondary: 0 0% 9%; 
+    --secondary-foreground: 145 63% 49%; 
+    --secondary-hover: 0 0% 15%;
+
+    --muted: 0 0% 12%; 
+    --muted-foreground: 240 5% 65%; 
+
+    --accent: 145 63% 49%; 
+    --accent-foreground: 0 0% 4%; 
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 96%;
+
+    --warning: 46 65% 52%; 
+    --warning-foreground: 0 0% 4%;
+
+    --border: 46 65% 52%; 
+    --input: 0 0% 7%; 
+    --ring: 46 65% 52%; 
+
+    --alert-low: 150 62% 31%; 
+    --alert-warning: 46 65% 52%; 
+    --alert-threat: 0 84% 60%; 
+    --alert-critical: 0 100% 50%; 
+
+    --chart-primary: 145 63% 49%; 
+    --chart-secondary: 150 62% 31%; 
+    --chart-highlight: 46 65% 52%; 
+    --chart-grid: 0 0% 15%; 
+    --chart-label: 240 5% 65%; 
+    --chart-bg: 0 0% 4%; 
+
+    /* Header & Special Gradients */
+    --header-bg: 0 0% 4%;
+    --header-gradient: linear-gradient(to right, hsl(145 63% 15%), hsl(145 63% 25%));
+    --status-active-bg: 145 63% 15%;
+    --status-active-text: 145 63% 49%;
+    --status-mon-bg: 217 91% 15%;
+    --status-mon-text: 217 91% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+    height: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    background-attachment: fixed;
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar styles matching the new theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--card-border) / 0.6);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--card-border) / 1);
+  }
+}
+
+@layer components {
+
+  /* Modern Card Glassmorphism - Minimal Effect */
+  .card {
+    @apply bg-card text-card-foreground border rounded-lg backdrop-blur-[2px] transition-all duration-300;
+    border-color: rgba(212, 175, 55, 0.3); /* Subtle gold border by default */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .card:hover {
+    @apply border-border;
+    background-color: hsl(var(--card-hover));
+    border-color: rgba(212, 175, 55, 0.8);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3), inset 0 0 10px rgba(212, 175, 55, 0.05);
+    transform: translateY(-2px);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold px-4 py-2 rounded transition-all duration-300;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+
+  .btn-primary:hover {
+    background-color: hsl(var(--primary-hover));
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.2);
+  }
+
+  /* Secondary Button: Dark bg with green outline */
+  .btn-secondary {
+    @apply bg-secondary border border-accent text-accent font-semibold px-4 py-2 rounded transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-accent/10;
+    background-color: hsl(var(--secondary-hover));
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+  }
+
+  /* Glow Effects */
+  .glow-effect {
+    @apply transition-all duration-300;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.2);
+    transform: translateY(-2px);
+  }
+
+  /* Alerts / System notifications (Green accents) */
+  .alert-green {
+    @apply bg-background border-l-4 rounded-r-md p-4 text-foreground shadow-sm;
+    border-left-color: #2ECC71;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.1);
+  }
+
+  /* Sidebar Item Styling */
+  .sidebar-item {
+    @apply px-4 py-2 text-muted-foreground rounded transition-all duration-300 cursor-pointer border border-transparent;
+  }
+
+  .sidebar-item:hover {
+    @apply text-foreground;
+    background-color: hsl(var(--card-hover));
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: inset 2px 0 0 rgba(212, 175, 55, 0.8);
+  }
+
+  .sidebar-item.active {
+    @apply bg-secondary text-primary border-transparent;
+    box-shadow: inset 3px 0 0 #D4AF37, 0 0 15px rgba(212, 175, 55, 0.1);
+  }
+
+  /* Responsive utilities */
+  .responsive-container {
+    @apply w-full px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4;
+  }
+}
+
+@layer utilities {
+  /* Green gradients for charts and analytics */
+  .bg-chart-gradient {
+    background: linear-gradient(to right, #1E7F4F, #2ECC71);
+  }
+  
+  .bg-chart-gradient-vertical {
+    background: linear-gradient(to top, #1E7F4F, #2ECC71);
+  }
+}
+
+/* Animations */
+@keyframes pulse-critical {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 61, 61, 0.6);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgba(255, 61, 61, 0.8), 0 0 30px rgba(255, 61, 61, 0.4);
+  }
+}
+
+@keyframes pulse-green {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.8);
+  }
+}
+
+@keyframes glow-neon {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4), inset 0 0 10px rgba(212, 175, 55, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+}
+
+@keyframes scan-beam {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.animate-scan-beam {
+  animation: scan-beam 2s linear infinite;
+}
