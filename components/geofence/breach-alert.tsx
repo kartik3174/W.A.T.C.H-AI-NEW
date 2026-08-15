@@ -27,7 +27,9 @@ export function BreachAlert({ position = 'top-right', autoHideDuration = 8000 }:
       }
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [autoHideDuration])
 
   if (breaches.length === 0) return null

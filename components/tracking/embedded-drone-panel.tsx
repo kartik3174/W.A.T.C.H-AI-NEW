@@ -63,7 +63,9 @@ export function EmbeddedDronePanel({ onBreachDetected }: EmbeddedDronePanelProps
       }
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [isRunning, onBreachDetected])
 
   // Subscribe to geofence breach events
@@ -79,20 +81,23 @@ export function EmbeddedDronePanel({ onBreachDetected }: EmbeddedDronePanelProps
           id: breachEvent.id,
           type: "boundary-breach",
           location: {
+            lat: breachEvent.position.x,
+            lng: breachEvent.position.y,
             region: `${breachEvent.position.x.toFixed(0)},${breachEvent.position.y.toFixed(0)}`,
-            coordinates: breachEvent.position,
           },
           severity: breachEvent.severity as "high" | "critical",
           confidence: 100,
           description: `${breachEvent.animalName} breached reserve boundary`,
-          timestamp: new Date(),
-          source: "geofence-system",
+          timestamp: Date.now(),
+          sourceCamera: "geofence-system",
         }
         handleAutoDeploy(demoThreat)
       }
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [isRunning])
 
   // Simulation loop
@@ -159,7 +164,7 @@ export function EmbeddedDronePanel({ onBreachDetected }: EmbeddedDronePanelProps
   }
 
   const activeMissions = missions.filter((m) => m.status === "active")
-  const activeDrones = fleet.filter((d) => d.status === "active" || d.status === "launching")
+  const activeDrones = fleet.filter((d) => d.status === "observing" || d.status === "en_route" || d.status === "launching")
 
   return (
     <div className="space-y-4 mt-6">
@@ -203,9 +208,9 @@ export function EmbeddedDronePanel({ onBreachDetected }: EmbeddedDronePanelProps
                       <div className="font-semibold text-[#FF7A00]">Mission {mission.id}</div>
                       <Badge className="bg-[#FF7A00] text-[#0B132B]">{mission.status}</Badge>
                     </div>
-                    <p className="text-xs text-[#EAEAEA]/70">Target: {mission.targetLocation.region}</p>
-                    <p className="text-xs text-[#EAEAEA]/70">Drone: {mission.assignedDroneId}</p>
-                    <p className="text-xs text-[#EAEAEA]/70">Distance: {mission.distance.toFixed(1)}m</p>
+                    <p className="text-xs text-[#EAEAEA]/70">Target: Lat {mission.targetLocation.lat.toFixed(1)}, Lng {mission.targetLocation.lng.toFixed(1)}</p>
+                    <p className="text-xs text-[#EAEAEA]/70">Drone: {mission.droneId}</p>
+                    <p className="text-xs text-[#EAEAEA]/70">Threat: {mission.threatType} ({mission.threatSeverity})</p>
                   </div>
                 ))
               )}
@@ -217,7 +222,7 @@ export function EmbeddedDronePanel({ onBreachDetected }: EmbeddedDronePanelProps
                   <div className="flex items-start justify-between mb-2">
                     <div className="font-semibold text-[#FF7A00]">{drone.name}</div>
                     <Badge className={`${
-                      drone.status === "active" ? "bg-green-600" : "bg-gray-500"
+                      drone.status !== "idle" && drone.status !== "landed" ? "bg-green-600" : "bg-gray-500"
                     } text-white`}>{drone.status}</Badge>
                   </div>
                   <div className="grid grid-cols-2 gap-2 text-xs text-[#EAEAEA]/70">

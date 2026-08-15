@@ -9,7 +9,7 @@ const createBrowserClient = () => {
 }
 
 // Create a singleton instance for client-side
-let browserClient: ReturnType<typeof createClient> | null = null
+let browserClient: ReturnType<typeof createBrowserClient> | null = null
 
 export const getSupabaseBrowserClient = () => {
   if (!browserClient) {

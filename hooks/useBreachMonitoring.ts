@@ -32,7 +32,9 @@ export function useBreachMonitoring(options: UseBreachMonitoringOptions = {}) {
       }
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [enabled, onBreachDetected])
 
   // Function to check animals for breach

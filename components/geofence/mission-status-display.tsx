@@ -19,7 +19,9 @@ export function MissionStatusDisplay({ compact = false }: MissionStatusDisplayPr
       setMission(state)
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [])
 
   if (!mission.isActive) {

@@ -398,7 +398,6 @@ export function CameraThresholdAlert() {
             <Progress
               value={activityLevel}
               className={`h-2 ${activityLevel > threshold ? "bg-red-200" : ""}`}
-              indicatorClassName={activityLevel > threshold ? "bg-red-500" : undefined}
             />
           </div>
 
@@ -464,10 +463,11 @@ export function CameraThresholdAlert() {
       {/* Intruder Alert Modal */}
       {showAlert && (
         <IntruderAlert
-          onClose={() => setShowAlert(false)}
+          onDismiss={() => setShowAlert(false)}
           timestamp={new Date().toISOString()}
           location="Main Entrance"
-          activityLevel={activityLevel}
+          motionLevel={activityLevel}
+          severity={activityLevel > 80 ? "high" : "medium"}
         />
       )}
     </Card>

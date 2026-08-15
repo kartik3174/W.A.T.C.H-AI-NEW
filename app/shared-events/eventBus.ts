@@ -92,6 +92,7 @@ class EventBus {
         fire: 0,
         animal_intrusion: 0,
         environmental_hazard: 0,
+        "boundary-breach": 0,
         unknown: 0,
       },
       averageConfidence: 0,

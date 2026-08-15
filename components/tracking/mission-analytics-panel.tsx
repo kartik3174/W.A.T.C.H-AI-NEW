@@ -41,7 +41,9 @@ export function MissionAnalyticsPanel() {
       }))
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [])
 
   const getResponseColor = (time: number) => {

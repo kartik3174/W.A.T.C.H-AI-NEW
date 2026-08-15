@@ -3,7 +3,7 @@ import { WatchLogo } from "@/components/watch-logo"
 
 interface PageHeaderProps {
   title: string
-  description?: string
+  description?: React.ReactNode
   icon?: React.ReactNode
   children?: React.ReactNode
 }
@@ -17,7 +17,13 @@ export function PageHeader({ title, description, icon, children }: PageHeaderPro
         </div>
         <div>
           <h1 className="text-2xl font-bold md:text-3xl">{title}</h1>
-          {description && <p className="text-muted-foreground mt-1">{description}</p>}
+          {description && (
+            typeof description === "string" ? (
+              <p className="text-muted-foreground mt-1">{description}</p>
+            ) : (
+              <div className="text-muted-foreground mt-1">{description}</div>
+            )
+          )}
         </div>
       </div>
       {children && <div className="flex items-center gap-2">{children}</div>}

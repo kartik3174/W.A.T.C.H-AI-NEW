@@ -85,7 +85,7 @@ export default function HealthRecordsPage({ params }: HealthRecordsPageProps) {
                 <CardDescription>Activity levels throughout the day</CardDescription>
               </CardHeader>
               <CardContent>
-                <AnimalActivityChart animal={animal} />
+                <AnimalActivityChart animalId={animal.id} />
               </CardContent>
             </Card>
 
@@ -167,7 +167,7 @@ export default function HealthRecordsPage({ params }: HealthRecordsPageProps) {
                 <CardDescription>6-month health status</CardDescription>
               </CardHeader>
               <CardContent>
-                <AnimalHealthChart animal={animal} />
+                <AnimalHealthChart animalId={animal.id} />
               </CardContent>
             </Card>
 

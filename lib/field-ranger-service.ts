@@ -62,20 +62,20 @@ export class FieldRangerService {
         const db = (event.target as IDBOpenDBRequest).result
 
         if (!db.objectStoreNames.contains(INCIDENTS_STORE)) {
-          db.createObjectStore(INCIDENTS_STORE, { keyPath: "id" })
-            .createIndex("synced", "synced", { unique: false })
-            .createIndex("createdAt", "createdAt", { unique: false })
+          const store = db.createObjectStore(INCIDENTS_STORE, { keyPath: "id" })
+          store.createIndex("synced", "synced", { unique: false })
+          store.createIndex("createdAt", "createdAt", { unique: false })
         }
 
         if (!db.objectStoreNames.contains(GPS_TRACKS_STORE)) {
-          db.createObjectStore(GPS_TRACKS_STORE, { keyPath: "id", autoIncrement: true })
-            .createIndex("timestamp", "timestamp", { unique: false })
+          const store = db.createObjectStore(GPS_TRACKS_STORE, { keyPath: "id", autoIncrement: true })
+          store.createIndex("timestamp", "timestamp", { unique: false })
         }
 
         if (!db.objectStoreNames.contains(OBSERVATIONS_STORE)) {
-          db.createObjectStore(OBSERVATIONS_STORE, { keyPath: "id" })
-            .createIndex("synced", "synced", { unique: false })
-            .createIndex("createdAt", "createdAt", { unique: false })
+          const store = db.createObjectStore(OBSERVATIONS_STORE, { keyPath: "id" })
+          store.createIndex("synced", "synced", { unique: false })
+          store.createIndex("createdAt", "createdAt", { unique: false })
         }
       }
     })
@@ -354,10 +354,12 @@ export class FieldRangerService {
     return new Promise((resolve, reject) => {
       const tx = this.db!.transaction([storeName], "readonly")
       const store = tx.objectStore(storeName)
-      const index = store.index("synced")
-      const request = index.getAll(false)
+      const request = store.getAll()
 
-      request.onsuccess = () => resolve(request.result)
+      request.onsuccess = () => {
+        const records: T[] = (request.result || []).filter((r: any) => !r.synced)
+        resolve(records)
+      }
       request.onerror = () => reject(request.error)
     })
   }

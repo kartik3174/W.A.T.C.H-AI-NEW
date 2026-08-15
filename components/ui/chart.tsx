@@ -19,7 +19,7 @@ import {
 } from "recharts"
 
 // Simple wrapper for ResponsiveContainer
-export function ChartContainer({ children, className }: { children: React.ReactNode; className?: string }) {
+export function ChartContainer({ children, className }: { children: React.ReactElement | any; className?: string }) {
   return (
     <div className={className}>
       <ResponsiveContainer width="100%" height="100%">

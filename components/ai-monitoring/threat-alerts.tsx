@@ -134,7 +134,7 @@ export function ThreatAlerts() {
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-2">
                   {getTypeIcon(alert.type)}
-                  <CardTitle>{alert.title || alert.type}</CardTitle>
+                  <CardTitle>{(alert as any).title || alert.type}</CardTitle>
                 </div>
                 <Badge className={getStatusColor(alert.status)}>{alert.status}</Badge>
               </div>

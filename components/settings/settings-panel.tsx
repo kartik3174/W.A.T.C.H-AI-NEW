@@ -77,12 +77,12 @@ export function SettingsPanel() {
   }
 
   const handleNestedToggleChange = (section: string, parent: string, key: string, checked: boolean) => {
-    setSettings((prev) => ({
+    setSettings((prev: any) => ({
       ...prev,
       [section]: {
-        ...prev[section as keyof typeof prev],
+        ...prev[section],
         [parent]: {
-          ...prev[section as keyof typeof prev][parent as keyof (typeof prev)[keyof typeof prev]],
+          ...(prev[section]?.[parent] || {}),
           [key]: checked,
         },
       },
@@ -90,12 +90,12 @@ export function SettingsPanel() {
   }
 
   const handleTimeChange = (section: string, parent: string, key: string, value: string) => {
-    setSettings((prev) => ({
+    setSettings((prev: any) => ({
       ...prev,
       [section]: {
-        ...prev[section as keyof typeof prev],
+        ...prev[section],
         [parent]: {
-          ...prev[section as keyof typeof prev][parent as keyof (typeof prev)[keyof typeof prev]],
+          ...(prev[section]?.[parent] || {}),
           [key]: value,
         },
       },

@@ -22,7 +22,7 @@ type Animal = {
   id: string
   name: string
   species: string
-  status: string
+  status?: string
 }
 
 type AnimalActionDialogProps = {

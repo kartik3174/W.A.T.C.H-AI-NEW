@@ -162,3 +162,40 @@ export async function addAlertToDb(alert: Omit<FirebaseAlert, "id">) {
     updatedAt: new Date().toISOString(),
   })
 }
+
+// ── IOT COLLAR TELEMETRY ──────────────────────────────────────────────────
+
+export type FirebaseCollarTelemetry = {
+  animalId: string
+  animalName: string
+  species: string
+  heartRate: number
+  bodyTemp: number
+  stressLevel: number
+  status: "Normal" | "High Stress/Threat" | "Critical"
+  batteryLevel: number | string
+  latitude: number
+  longitude: number
+  altitude?: number
+  timestamp: string
+}
+
+export function watchCollarTelemetry(
+  callback: (telemetry: Record<string, FirebaseCollarTelemetry>) => void
+) {
+  const telemetryRef = ref(database, "collar_telemetry")
+  onValue(telemetryRef, (snapshot) => {
+    const data = snapshot.val() || {}
+    callback(data)
+  })
+  return () => off(telemetryRef)
+}
+
+export async function pushCollarTelemetry(telemetry: FirebaseCollarTelemetry) {
+  const nodeRef = ref(database, `collar_telemetry/${telemetry.animalId}`)
+  await set(nodeRef, {
+    ...telemetry,
+    updatedAt: new Date().toISOString(),
+  })
+}
+

@@ -12,7 +12,7 @@ export interface IncidentEvent {
   timestamp: Date
   type: "breach" | "threat" | "deployment" | "confirmation" | "notification"
   message: string
-  severity?: "high" | "critical"
+  severity?: "low" | "medium" | "high" | "critical"
   animal?: string
 }
 
@@ -70,7 +70,9 @@ export function LiveIncidentFeed() {
       }, 2400)
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [])
 
   // Subscribe to threat events
@@ -88,7 +90,9 @@ export function LiveIncidentFeed() {
       }
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [])
 
   const getIcon = (type: IncidentEvent["type"]) => {

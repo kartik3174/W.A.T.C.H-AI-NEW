@@ -1,7 +1,7 @@
 // Shared Live Event Stream - Event Type Definitions
 // This is a completely isolated module that does not modify existing systems
 
-export type ThreatType = "poaching" | "fire" | "animal_intrusion" | "environmental_hazard" | "unknown"
+export type ThreatType = "poaching" | "fire" | "animal_intrusion" | "environmental_hazard" | "boundary-breach" | "unknown"
 
 export interface Location {
   lat: number

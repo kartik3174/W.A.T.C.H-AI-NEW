@@ -39,7 +39,9 @@ export function DroneCommandPanel() {
       setMissionTimer(0)
     })
 
-    return () => unsubscribe()
+    return () => {
+      unsubscribe()
+    }
   }, [])
 
   // Simulate drone telemetry updates

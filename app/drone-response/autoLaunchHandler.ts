@@ -34,25 +34,23 @@ export function convertBreachToThreat(breach: GeofenceBreachEvent): ThreatEvent 
 
   return {
     id: `threat_${breach.animalId}_${breach.timestamp}`,
-    type: "boundary_breach",
-    animal: {
-      id: breach.animalId,
-      name: breach.animal,
-      species: breach.species,
-    },
+    type: "boundary-breach",
     location: {
-      x: breach.location.x,
-      y: breach.location.y,
+      lat: breach.location.x,
+      lng: breach.location.y,
       region: breach.zone || "boundary",
-      coordinates: `${breach.location.x}, ${breach.location.y}`,
     },
     confidence: confidenceMap[breach.severity] || 80,
     timestamp: breach.timestamp,
-    details: {
+    sourceCamera: "geofence-system",
+    description: `${breach.animal} (${breach.species}) breached reserve boundary`,
+    severity: (breach.severity === "high" ? "high" : breach.severity === "medium" ? "medium" : "low") as "low" | "medium" | "high" | "critical",
+    affectedAnimals: [breach.animalId],
+    metadata: {
+      animalName: breach.animal,
+      species: breach.species,
       breachType: breach.type,
       direction: breach.direction,
-      severity: breach.severity,
-      detectedAt: new Date(breach.timestamp).toISOString(),
     },
   }
 }
@@ -87,7 +85,7 @@ export function handleGeofenceBreach(breach: GeofenceBreachEvent): void {
 
   // Emit threat event to drone response system
   console.log("[AutoLaunch] Emitting threat event to drone system:", threatEvent)
-  eventBus.emit(threatEvent)
+  eventBus.publish(threatEvent)
 
   // Log deployment notification
   if (autoLaunchConfig.notifyUser) {
